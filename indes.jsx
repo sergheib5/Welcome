@@ -55,3 +55,13 @@ const App = () => {
 };
 
 export const run = render(<App />);
+
+curl -X POST \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer YOUR_OPENAI_KEY" \
+  -d '{
+  "prompt": "Translate the following English text to French: '{}'",
+  "max_tokens": 60
+}' \
+  https://api.openai.com/v1/engines/davinci-codex/completions
+
